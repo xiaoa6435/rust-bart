@@ -1,0 +1,37 @@
+[package]
+name = "rust-bart"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+statrs = "0.16.0"
+rand = "0.8.5"
+rand_distr = "0.4.3"
+nohash-hasher = "0.2.0"
+num-traits = "0.2"
+log = "0.4.0"
+env_logger = "0.10.0"
+itertools = "0.10.5"
+rayon = "1.7.0"
+num_cpus = "1.15.0"
+nohash = "0.2.0"
+ordered-float = "3.7.0"
+# arrow = "40.0.0"
+arrow-csv = "40.0.0"
+arrow_util = "0.1.3"
+# arrow = { version = "40.0.0", default-features = false, features = ["csv", "ipc", "simd"] }
+arrow = { version = "40.0.0", default-features = false, features = ["csv", "ipc", "prettyprint"] }
+maplit = "1.0.2"
+
+[profile.dev]
+overflow-checks = false
+
+[dev-dependencies]
+criterion = "0.3"
+
+[[bench]]
+name = "my_benchmark"
+harness = false
+
+[profile.test]
+opt-level = 3
